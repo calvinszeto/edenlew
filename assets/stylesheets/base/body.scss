@@ -1,0 +1,6 @@
+html, body {
+  font-family: ProximaNova-Regular, arial, sans-serif;
+  overflow-x: hidden;
+  position: relative; // Required for overflow-x on iOS
+  height: 100%; // Fix for nav on iOS
+}

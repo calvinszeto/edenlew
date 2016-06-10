@@ -1,0 +1,7 @@
+*.swp
+secrets.json
+dist/
+node_modules/
+.idea/
+.tmp/
+hbs_context.json

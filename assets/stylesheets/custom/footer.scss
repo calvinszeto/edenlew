@@ -1,0 +1,25 @@
+.footer {
+  font-size: 12px;
+  font-family: ProximaNova-Light;
+  color: #8BA7B9;
+  line-height: 1.4;
+  a {
+    color: #20ABEB;
+    @include hover-underline(#20ABEB, 0.8em);
+  }
+
+  margin: 130px auto 4*$site-margin;
+  
+  &__links {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+
+    margin: 2*$site-margin 0 0;
+
+    a {
+      margin-right: $site-margin;
+      @include hover-underline(#20ABEB, 0.9em);
+    }
+  }
+}

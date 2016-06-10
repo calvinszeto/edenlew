@@ -1,0 +1,45 @@
+.managements {
+  background: transparent;
+  color: #6B879A;
+
+  &__leadership {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  &__leadership-container {
+    margin: 0;
+    border-bottom: 1px solid #D6E1E8;
+  }
+
+  &__intro {
+    @include col(6, 330px);
+  }
+
+  &__intro-title {
+    color: #008590;
+    letter-spacing: -0.3px;
+    margin: 3*$site-margin 0 20px;
+  }
+
+  &__intro-description {
+    font-family: ProximaNova-Light;
+    font-size: 18px;
+    line-height: 1.45;
+  }
+
+  &__leaderships {
+    @include col(6);
+
+    display: flex;
+    flex-flow: row nowrap;
+    margin: $site-margin 0;
+  }
+
+  &__people {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: $site-margin 0;
+  }
+}

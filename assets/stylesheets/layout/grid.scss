@@ -1,0 +1,31 @@
+$site-margin: 15px;
+$site-padding: 20px;
+$col-width: 75px;
+
+@function col-width($num) {
+  @return $num*$col-width + 2*($num - 1)*$site-margin;
+}
+
+@mixin col($num, $min: -1) {
+  @if $min == -1 {
+    flex: 0 0 col-width($num);
+  }
+  @else {
+    flex: 1 1 $min;
+    min-width: $min;
+  }
+}
+
+.container {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 $site-margin;
+}
+
+.row {
+  margin: 0 -1 * $site-margin;
+}
+
+div {
+  margin: 0 $site-margin;
+}

@@ -1,0 +1,25 @@
+/* VENDOR IMPORTS */
+@import 'vendor/normalize';
+@import 'webfonts';
+
+/* BASE STYLES */
+@import 'base/body';
+@import 'base/header';
+@import 'base/headers';
+@import 'base/nav';
+@import 'base/text';
+
+/* LAYOUT STYLES */
+@import 'layout/grid';
+
+/* MODULE STYLES */
+@import 'module/titles';
+@import 'module/person';
+
+/* CUSTOM STYLES */
+@import 'custom/body';
+@import 'custom/header';
+@import 'custom/footer';
+@import 'custom/education';
+@import 'custom/managements';
+@import 'custom/management';

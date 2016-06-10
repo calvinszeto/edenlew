@@ -1,0 +1,10 @@
+.page-title {
+  color: #FFFFFF;
+
+  &__container {
+    padding: 35px 0 2*$site-margin;
+    margin: 0;
+    background: url('../images/interior_header.jpg');
+    background-repeat: repeat;
+  }
+}

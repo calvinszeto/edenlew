@@ -1,0 +1,324 @@
+$nav-breakpoint-large: 1024px;
+$nav-breakpoint-small: 520px;
+
+$tablet-nav-breakpoint-large: 620px;
+$tablet-nav-breakpoint-small: 520px;
+
+.header {
+  font-size: 13px;
+  font-family: ProximaNova-Light;
+  font-weight: 700;
+  background: #FFFFFF;
+  color: #6B879A;
+  a {
+    color: #20ABEB;
+  }
+
+  &__container {
+    @extend .row;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 74px;
+  }
+
+  &__logo-link {
+    @include cancel-default-link();
+  }
+
+  &__logo {
+    flex: 0 0 auto;
+
+    width: 112px;
+    margin: 0 2*$site-margin 0 $site-margin;
+  }
+
+  &__nav--desktop {
+    height: 100%;
+
+    @media (max-width: $nav-breakpoint-large) {
+      display: none;
+    }
+  }
+
+  &__nav-list {
+    margin: 0 $site-margin;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+  }
+
+  &__nav-item {
+    margin: 0;
+    height: 100%;
+
+    a {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      line-height: 1;
+
+      padding: 0 $site-margin;
+      height: 100%;
+      @include cancel-default-link;
+    }
+
+    &.selected, &:hover, &:focus, &:active {
+      background: #27A4AA;
+      color: #FFFFFF;
+      box-shadow: inset 0px 6px 0px 0px #008590;
+      -webkit-font-smoothing: antialiased;
+    }
+  }
+
+  &__actions {
+    flex: 1 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+
+    @media (max-width: $nav-breakpoint-small) {
+      display: none;
+    }
+  }
+
+  &__register {
+    margin: 0 18px 0 0;
+
+    // Short border between Register and Login links
+    position: relative;
+    &::after {
+      content: '';
+      background: #b2c3cd;
+      position: absolute;
+      display: inline-block;
+      top: 1px;
+      right: -11px;
+      height: 11px;
+      width: 1px;
+    }
+  }
+
+  &__login {
+    margin: 0 10px 0 7px;
+
+    // Arrow right on the Login link
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-left: 5px solid currentColor;
+      border-bottom: 5px solid transparent;
+      top: 2px;
+      right: -10px;
+    }
+  }
+
+  &__hamburger {
+    display: none;
+    @include cancel-default-link();
+
+    @media (max-width: $nav-breakpoint-large) {
+      display: block;
+      margin: 0 15px 0 35px;
+      padding-bottom: 3px;
+      cursor: pointer;
+    }
+  }
+
+  &__submenu {
+    width: 100%;
+    height: 70px;
+    background: #27A4AA;
+
+    z-index: 1000; // box-shadow should cover the page content
+
+    position: absolute;
+    top: 4px;
+
+    @media (max-width: $nav-breakpoint-large) {
+      display: none;
+    }
+  }
+
+  &__submenu--press {
+    transform: translateX(310px);
+  }
+
+  &__submenu--company {
+    transform: translateX(249px);
+  }
+
+  &__submenu-background {
+    width: 100%;
+    height: 70px;
+    background: #27A4AA;
+
+    box-shadow: 0px 4px 4px 0 rgba(0,0,0,0.13);
+    z-index: 900; // Should appear underneath any submenus
+
+    position: absolute;
+    top: 4px;
+
+    @media (max-width: $nav-breakpoint-large) {
+      display: none;
+    }
+  }
+
+  &__submenu-links {
+    display: flex;
+    flex-flow: row nowrap;
+    width: fit-content;
+
+    a {
+      @include hover-underline(#FFFFFF, 3em);
+
+      font-size: 13px;
+      font-family: ProximaNova-Semibold;
+      -webkit-font-smoothing: antialiased;
+      color: #FFFFFF;
+      margin: 0 $site-margin;
+      padding: 27px 0;
+    }
+
+    a + a {
+      position: relative;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        width: 1px;
+        height: 13px;
+        background: #52C0C5;
+        left: -1 * $site-margin;
+      }
+    }
+  }
+
+  &__nav--tablet {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(300px);
+    z-index: 1200;
+
+    width: 300px;
+    height: 100vh;
+    box-sizing: border-box;
+
+    box-shadow: inset 22px 0px 22px -18px rgba(0,0,0,0.25);
+    background: #27A4AA;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-family: ProximaNova-Semibold;
+    -webkit-font-smoothing: antialiased;
+
+    padding: 25px 65px 30px 30px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+  }
+
+  &__close {
+    flex: 1 1 auto;
+    max-height: 161px;
+    align-self: flex-end;
+
+    margin: 0;
+    a {
+      cursor: pointer;
+    }
+  }
+
+  &__nav-list--tablet {
+    flex: 0 0 auto;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+
+    margin: 0;
+
+    a {
+      @include hover-underline(#FFFFFF);
+      color: #FFFFFF;
+      width: fit-content;
+    }
+
+    & > a + a {
+      margin-top: 25px;
+    }
+  }
+
+  &__submenu--tablet {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+
+    font-family: ProximaNova-Regular;
+    margin: 0 0 23px;
+
+    a {
+      @include hover-underline(#EAF1F6);
+      color: #EAF1F6;
+      margin-top: 12px;
+    }
+  }
+
+  &__documents {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    font-family: ProximaNova-Regular;
+    font-size: 12px;
+
+    margin: 28px 0 0;
+
+    a {
+      @include hover-underline(#EAF1F6);
+      color: #EAF1F6;
+      margin-top: 8px;
+    }
+
+    @media (max-height: $tablet-nav-breakpoint-large) {
+      display: none;
+    }
+  }
+
+  &__twitter {
+    width: 49px;
+    height: 49px;
+  }
+
+  &__linkedin {
+    width: 36px;
+    height: 33px;
+    margin-left: 7px;
+  }
+  
+  &__social {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+
+    margin: 25px 0 0;
+
+    a {
+      @include cancel-default-link();
+    }
+
+    @media (max-height: $tablet-nav-breakpoint-small) {
+      display: none;
+    }
+  }
+}

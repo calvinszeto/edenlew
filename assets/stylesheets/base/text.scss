@@ -1,0 +1,25 @@
+@mixin underline($color: #20ABEB, $height: 1em) {
+  background-image: linear-gradient(to bottom, rgba($color,0) 50%, rgba($color,0.6) 50%);
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  background-position: 0 $height;
+}
+
+@mixin hover-underline($color: #20ABEB, $height: 1em) {
+  &:hover, &:focus, &:active {
+    @include underline($color, $height);
+  }
+}
+
+@mixin cancel-default-link {
+  color: unset;
+  &:hover, &:focus, &:active {
+    background: none;
+  }
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+  @include hover-underline();
+}
