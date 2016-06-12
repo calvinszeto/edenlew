@@ -15,6 +15,30 @@ $box-margin: 8px;
 		color: #FFFFFF;
 		width: 100%;
 		padding: 40px;
+
+		&::after {
+			position: absolute;
+			background: #FFFFFF;
+			content: '';
+			left: 41px;;
+			bottom: 10px;
+			width: 35px;
+			height: 4px;
+		}
+	}
+
+	&__sub-title {
+		font-family: 'Avenir LT W01_35 Light', arial, sans-serif;
+		font-size: 18px;
+		position: absolute;
+		color: #FFFFFF;
+
+		display: flex;
+		align-items: flex-start;
+
+		p {
+			margin-top: 46px;
+		}
 	}
 }
 
@@ -32,5 +56,9 @@ $box-margin: 8px;
 		align-items: center;
 
 		text-align: center;
+
+		&::after {
+			display: none;
+		}
 	}
 }
