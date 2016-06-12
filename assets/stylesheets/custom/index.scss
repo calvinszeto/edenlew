@@ -21,6 +21,32 @@
 		flex-flow: row wrap;
 	}
 
+	&__other-projects {
+		display: flex;
+		justify-content: center;
+		text-transform: uppercase;
+		margin: 17px 0 7px;
+		width: 100%;
+
+		p {
+			background: #FFFFFF;
+			margin: 0;
+			padding: 0 15px;
+			z-index: 1000; // Show white background over horizontal line
+		}
+
+		position: relative;
+		&::before {
+			position: absolute;
+			background: #000000;
+			content: '';
+			width: 100%;
+			height: 1px;
+			left: 0;
+			top: 8px;
+		}
+	}
+
 	&__eden {
 		@extend .box;	
 	}
