@@ -1,4 +1,4 @@
-$site-margin: 15px;
+$site-margin: 85px;
 $site-padding: 20px;
 $col-width: 75px;
 
@@ -17,15 +17,11 @@ $col-width: 75px;
 }
 
 .container {
-  max-width: 1230px;
+  max-width: 1370px;
   margin: 0 auto;
   padding: 0 $site-margin;
 }
 
 .row {
   margin: 0 -1 * $site-margin;
-}
-
-div {
-  margin: 0 $site-margin;
 }

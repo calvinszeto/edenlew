@@ -53,6 +53,7 @@ gulp.task('copy', ['clean'], function () {
         .pipe(gulp.dest('.tmp/'));
 });
 
+// Use this for templated pages
 function createManagementPages() {
     // Grab array of managements from context
     managements = context.managements;
@@ -82,7 +83,7 @@ gulp.task('assemble', ['clean'], function () {
         '!./pages/_templates/management.hbs']); // Ignore templates for multiple pages
 
     loadHelpers();
-    createManagementPages();
+    //createManagementPages();
 
     // Not sure why, but assemble.data('filename') isn't working
     assemble.data(context);
