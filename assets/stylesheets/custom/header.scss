@@ -16,8 +16,6 @@
 		display: flex;
 		flex-flow: row nowrap;
 		align-items: flex-end;
-
-		margin: 0 $site-margin;
 	}
 
 	&__logo {
@@ -32,8 +30,6 @@
 	&__links {
 		display: flex;
 		flex-flow: row nowrap;
-
-		margin: 0 $site-margin;
 	}
 
 	&__blog {

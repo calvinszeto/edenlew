@@ -1,0 +1,36 @@
+$box-margin: 8px;
+
+.box {
+	margin: $box-margin;
+	background: goldenrod;
+	height: 350px;
+
+	flex: 1 0 0;
+
+	position: relative;
+	&__title {
+		position: absolute;
+		font-family: 'Athelas W01 Bold';
+		font-size: 36px;
+		color: #FFFFFF;
+		width: 100%;
+		padding: 40px;
+	}
+}
+
+.box--mini {
+	@extend .box;
+	height: 288px;
+
+	.box__title {
+		font-size: 25px;
+		padding: 0;
+		height: 100%;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		text-align: center;
+	}
+}

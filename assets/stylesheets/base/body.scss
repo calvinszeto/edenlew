@@ -4,3 +4,7 @@ html, body {
   position: relative; // Required for overflow-x on iOS
   height: 100%; // Fix for nav on iOS
 }
+
+div {
+	box-sizing: border-box;
+}

@@ -1,0 +1,95 @@
+.index {
+	padding-top: 22px;
+
+	&__row {
+		margin: 0 -1 * $box-margin;
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	&__column--large {
+		flex: 2 0 0;
+	}
+
+	&__column--small {
+		flex: 1 0 0;
+	}
+
+	&__sub-row {
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	&__eden {
+		@extend .box;	
+	}
+
+	&__thesis-book {
+		@extend .box;	
+		flex-grow: 2;
+	}
+
+	&__thesis-presentation {
+		@extend .box;	
+
+		height: 400px;
+	}
+
+	&__masterminds {
+		@extend .box;	
+	}
+
+	&__crime-tools {
+		@extend .box;	
+	}
+
+	&__gild {
+		@extend .box;	
+	}
+
+	&__keyhole-gigantico {
+		@extend .box;	
+
+		height: 716px;
+	}
+
+	&__thesis-experiments {
+		@extend .box;	
+	}
+
+	&__parallel-times {
+		@extend .box;	
+	}
+
+	&__nutshell {
+		@extend .box--mini;	
+	}
+
+	&__nico {
+		@extend .box--mini;	
+	}
+
+	&__sound-steps {
+		@extend .box--mini;	
+	}
+
+	&__fugly-pickles {
+		@extend .box--mini;	
+	}
+
+	&__flos {
+		@extend .box--mini;	
+	}
+	
+	&__ascend {
+		@extend .box--mini;	
+	}
+
+	&__garden {
+		@extend .box--mini;	
+	}
+
+	&__eggs {
+		@extend .box--mini;	
+	}
+}
