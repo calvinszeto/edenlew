@@ -6,6 +6,7 @@ $box-margin: 8px;
 	height: 350px;
 
 	flex: 1 0 0;
+	min-width: (1200 - (2 * 16px)) / 3; 
 
 	position: relative;
 	&__title {
@@ -45,6 +46,8 @@ $box-margin: 8px;
 .box--mini {
 	@extend .box;
 	height: 288px;
+
+	min-width: (1200 - (3 * 16px)) / 4;
 
 	.box__title {
 		font-size: 25px;

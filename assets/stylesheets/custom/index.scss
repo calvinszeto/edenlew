@@ -1,3 +1,5 @@
+$large-breakpoint: 1200px + 2 * $site-margin;
+
 .index {
 	background: #FFFFFF;
 	padding: 22px 0 42px;
@@ -14,6 +16,10 @@
 
 	&__column--small {
 		flex: 1 0 0;
+
+		@media (max-width: $large-breakpoint) {
+			flex-basis: 100%;
+		}
 	}
 
 	&__sub-row {
