@@ -1,12 +1,32 @@
 $box-margin: 8px;
+$box-column-width: (1200 - (2 * 16px)) / 3;
 
 .box {
 	margin: $box-margin;
 
 	flex: 1 0 0;
-	min-width: (1200 - (2 * 16px)) / 3; 
-
+	min-width: $box-column-width; 
+	display: flex;
 	position: relative;
+	cursor: pointer;
+
+	a {
+		display: flex;
+		flex-flow: column nowrap;
+	}
+
+	// Overlay black opacity
+	&::before {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		opacity: 0.3;
+		background: #000000;
+		content: '';
+	}
+
 	&__title {
 		position: absolute;
 		font-family: 'Athelas W01 Bold';
@@ -15,7 +35,9 @@ $box-margin: 8px;
 		width: 100%;
 		padding: 40px;
 		top: 0;
+		left: 0;
 
+		// horizontal line between title and subtitle
 		&::after {
 			position: absolute;
 			background: #FFFFFF;
@@ -49,7 +71,6 @@ $box-margin: 8px;
 
 .box--mini {
 	@extend .box;
-	height: 288px;
 
 	min-width: (1200 - (3 * 16px)) / 4;
 

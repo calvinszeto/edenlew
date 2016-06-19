@@ -59,13 +59,11 @@ $large-breakpoint: 1200px + 2 * $site-margin;
 
 	&__thesis-book {
 		@extend .box;	
-		flex-grow: 2;
+		flex-grow: (2 * $box-column-width + 16) / $box-column-width;
 	}
 
 	&__thesis-presentation {
 		@extend .box;	
-
-		height: 400px;
 	}
 
 	&__masterminds {
@@ -82,8 +80,6 @@ $large-breakpoint: 1200px + 2 * $site-margin;
 
 	&__keyhole-gigantico {
 		@extend .box;	
-
-		height: 716px;
 	}
 
 	&__thesis-experiments {
