@@ -10,9 +10,24 @@ $box-column-width: (1200 - (2 * 16px)) / 3;
 	position: relative;
 	cursor: pointer;
 
+	// Fix for div height to match img height
 	a {
 		display: flex;
 		flex-flow: column nowrap;
+	}
+
+	&:hover {
+		&::before {
+			opacity: 0;
+		}
+
+		.box__title {
+			display: none;
+		}
+
+		.box__sub-title {
+			display: none;
+		}
 	}
 
 	// Overlay black opacity
@@ -30,10 +45,10 @@ $box-column-width: (1200 - (2 * 16px)) / 3;
 	&__title {
 		position: absolute;
 		font-family: 'Athelas W01 Bold';
-		font-size: 36px;
+		font-size: 34px;
 		color: #FFFFFF;
 		width: 100%;
-		padding: 40px;
+		padding: 31px 43px;
 		top: 0;
 		left: 0;
 
@@ -43,15 +58,15 @@ $box-column-width: (1200 - (2 * 16px)) / 3;
 			background: #FFFFFF;
 			content: '';
 			left: 41px;;
-			bottom: 10px;
+			bottom: 5px;
 			width: 35px;
-			height: 4px;
+			height: 3px;
 		}
 	}
 
 	&__sub-title {
 		font-family: 'Avenir LT W01_35 Light', arial, sans-serif;
-		font-size: 18px;
+		font-size: 16px;
 		position: absolute;
 		color: #FFFFFF;
 
@@ -59,7 +74,7 @@ $box-column-width: (1200 - (2 * 16px)) / 3;
 		align-items: flex-start;
 
 		p {
-			margin-top: 46px;
+			margin-top: 37px;
 		}
 	}
 
