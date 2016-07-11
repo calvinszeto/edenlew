@@ -169,7 +169,7 @@ gulp.task('build', ['stylesheets', 'usemin', 'copy'], function () {
 gulp.task('default', ['build']);
 
 gulp.task('deploy', ['build'], function () {
-    if (isStaging || isProduction) {
+    //if (isStaging || isProduction) {
         var publisher = plugins.awspublish.create({
             params: {
                 Bucket: secrets.s3.bucketname
@@ -194,7 +194,7 @@ gulp.task('deploy', ['build'], function () {
 
         merge(uncompressed, compressed).pipe(publisher.sync())
             .pipe(plugins.awspublish.reporter());
-    }
+    //}
 });
 
 gulp.task('watch', function () {

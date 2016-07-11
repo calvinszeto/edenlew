@@ -1,0 +1,38 @@
+$page-container-width: 1200 - $box-column-width;
+$page-container-margin: $box-column-width / 2;
+$page-text-width: 665px;
+
+.page {
+    &__container {
+        margin: 0 auto; 
+        max-width: $page-container-width;
+    }
+
+    &__header {
+        @extend .page__container;
+        padding: 90px 0 75px;
+    }
+
+    &__title {
+        font-family: 'Athelas w01 Bold', serif;
+        font-size: 51px;
+    }
+
+    &__subtitle {
+        font-size: 19px;
+    }
+
+    &__text {
+        max-width: $page-text-width;
+        margin: 42px auto 3px;
+        line-height: 1.5;
+    }
+
+    &__fake {
+        background: black;
+        color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

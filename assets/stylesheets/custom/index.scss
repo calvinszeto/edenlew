@@ -53,72 +53,8 @@ $large-breakpoint: 1200px + 2 * $site-margin;
 		}
 	}
 
-	&__eden {
-		@extend .box;	
-	}
-
 	&__thesis-book {
 		@extend .box;	
 		flex-grow: (2 * $box-column-width + 16) / $box-column-width;
-	}
-
-	&__thesis-presentation {
-		@extend .box;	
-	}
-
-	&__masterminds {
-		@extend .box;	
-	}
-
-	&__crime-tools {
-		@extend .box;	
-	}
-
-	&__gild {
-		@extend .box;	
-	}
-
-	&__keyhole-gigantico {
-		@extend .box;	
-	}
-
-	&__thesis-experiments {
-		@extend .box;	
-	}
-
-	&__parallel-times {
-		@extend .box;	
-	}
-
-	&__nutshell {
-		@extend .box--mini;	
-	}
-
-	&__nico {
-		@extend .box--mini;	
-	}
-
-	&__sound-steps {
-		@extend .box--mini;	
-	}
-
-	&__fugly-pickles {
-		@extend .box--mini;	
-	}
-
-	&__flos {
-		@extend .box--mini;	
-	}
-	
-	&__ascend {
-		@extend .box--mini;	
-	}
-
-	&__garden {
-		@extend .box--mini;	
-	}
-
-	&__eggs {
-		@extend .box--mini;	
 	}
 }
