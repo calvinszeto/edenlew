@@ -1,15 +1,24 @@
 $page-container-width: 1200 - $box-column-width;
 $page-container-margin: $box-column-width / 2;
 $page-text-width: 665px;
+$page-skinny-text-width: 455px;
 
 .page {
     &__container {
+        display: flex;
         margin: 0 auto; 
         max-width: $page-container-width;
+        position: relative;
+    }
+
+    &__container--full {
+        display: flex;
+        width: 100%;
     }
 
     &__header {
         @extend .page__container;
+        flex-flow: column nowrap;
         padding: 90px 0 75px;
     }
 
@@ -24,8 +33,42 @@ $page-text-width: 665px;
 
     &__text {
         max-width: $page-text-width;
-        margin: 42px auto 3px;
+        margin: 42px auto 36px;
         line-height: 1.5;
+    }
+
+    &__text-with-sidebar {
+        @extend .page__text;
+        max-width: $page-skinny-text-width;
+        margin: 42px 0 36px;
+    }
+
+    &__sidebar {
+        position: absolute;
+        width: $box-column-width;
+        height: 100%;
+        right: - $box-column-width / 2;
+
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        align-content: center;
+    }
+
+    &__sidebar-container {
+        min-height: 490px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__item--half {
+        flex: 0 0 $box-column-width / 2; 
+        margin: 18px 0;
+    }
+
+    &__item-subtitle {
+        font-size: 11px;
+        padding-top: 10px;
     }
 
     &__fake {
