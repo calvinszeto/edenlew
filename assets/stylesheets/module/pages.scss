@@ -2,6 +2,7 @@ $page-container-width: 1200 - $box-column-width;
 $page-container-margin: $box-column-width / 2;
 $page-text-width: 665px;
 $page-skinny-text-width: 455px;
+$page-mini-text-width: 435px;
 
 .page {
     &__container {
@@ -14,6 +15,12 @@ $page-skinny-text-width: 455px;
     &__container--full {
         display: flex;
         width: 100%;
+    }
+
+    &__container--spaced {
+       @extend .page__container;
+       justify-content: space-between;
+       margin-bottom: 87px;
     }
 
     &__header {
@@ -40,7 +47,13 @@ $page-skinny-text-width: 455px;
     &__text-with-sidebar {
         @extend .page__text;
         max-width: $page-skinny-text-width;
-        margin: 42px 0 36px;
+        margin: 0;
+    }
+
+    &__text--mini {
+        @extend .page__text;
+        max-width: $page-mini-text-width;
+        margin: 0 auto 47px;
     }
 
     &__sidebar {
@@ -69,6 +82,37 @@ $page-skinny-text-width: 455px;
     &__item-subtitle {
         font-size: 11px;
         padding-top: 10px;
+    }
+
+    &__item--bottom {
+        align-self: flex-end;
+    }
+
+    &__headline {
+        font-family: 'Athelas w01 Bold', serif;
+        font-size: 33px;
+        margin: 70px auto 54px;
+    }
+
+    &__column {
+        flex: 0 0 $box-column-width;
+        display: flex;
+        align-items: center;
+    }
+
+    &__column--centered {
+        @extend .page__column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__half-column {
+        flex: 0 0 $box-column-width / 2;
+    }
+
+    &__footnote {
+        margin: 73px auto;
     }
 
     &__fake {
