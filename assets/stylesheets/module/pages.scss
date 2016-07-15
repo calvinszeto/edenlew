@@ -3,10 +3,12 @@ $page-container-margin: $box-column-width / 2;
 $page-text-width: 665px;
 $page-skinny-text-width: 455px;
 $page-mini-text-width: 435px;
+$page-headline-width: 685px;
 
 .page {
     &__container {
         display: flex;
+        flex-flow: row wrap;
         margin: 0 auto; 
         max-width: $page-container-width;
         position: relative;
@@ -14,6 +16,7 @@ $page-mini-text-width: 435px;
 
     &__container--full {
         display: flex;
+        justify-content: space-between;
         width: 100%;
     }
 
@@ -92,6 +95,8 @@ $page-mini-text-width: 435px;
         font-family: 'Athelas w01 Bold', serif;
         font-size: 33px;
         margin: 70px auto 54px;
+        max-width: $page-headline-width;
+        text-align: center;
     }
 
     &__column {
@@ -121,5 +126,6 @@ $page-mini-text-width: 435px;
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 16px;
     }
 }
