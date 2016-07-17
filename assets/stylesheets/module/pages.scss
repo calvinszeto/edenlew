@@ -1,3 +1,4 @@
+$half-page-width: (1200 - 2*$box-margin) / 2;
 $page-container-width: 1200 - $box-column-width;
 $page-container-margin: $box-column-width / 2;
 $page-text-width: 665px;
@@ -16,6 +17,7 @@ $page-headline-width: 685px;
 
     &__container--full {
         display: flex;
+        flex-flow: row wrap;
         justify-content: space-between;
         width: 100%;
     }
@@ -24,6 +26,11 @@ $page-headline-width: 685px;
        @extend .page__container;
        justify-content: space-between;
        margin-bottom: 87px;
+    }
+
+    &__container--centered {
+       @extend .page__container;
+       justify-content: center;
     }
 
     &__header {
@@ -99,6 +106,15 @@ $page-headline-width: 685px;
         text-align: center;
     }
 
+    &__step-text {
+        font-family: 'Athelas w01 Bold', serif;
+        font-size: 33px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     &__column {
         flex: 0 0 $box-column-width;
         display: flex;
@@ -114,6 +130,10 @@ $page-headline-width: 685px;
 
     &__half-column {
         flex: 0 0 $box-column-width / 2;
+    }
+
+    &__wide-column {
+        flex: 0 0 $half-page-width;
     }
 
     &__footnote {
