@@ -168,6 +168,16 @@ $page-headline-width: 685px;
             width: 145px;
         }
     }
+    &__image--half {
+        img {
+            width: 592px;
+        }
+    }
+    &__image--natural{
+        img {
+            max-width: 100%;
+        }
+    }
 
     &__fake {
         background: black;
