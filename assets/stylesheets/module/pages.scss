@@ -74,7 +74,7 @@ $page-headline-width: 685px;
 
         display: flex;
         flex-flow: row wrap;
-        align-items: center;
+        align-items: flex-start;
         align-content: center;
     }
 
@@ -140,6 +140,33 @@ $page-headline-width: 685px;
 
     &__footnote {
         margin: 73px auto;
+    }
+
+    // Use a wrapper div on images because page__container is a flexbox
+    &__image {
+        img {
+            width: 100%;
+        }
+    }
+    &__image--sidebar {
+        img {
+            width: 97px;
+        }
+    }
+    &__image--third {
+        img {
+            width: 390px;
+        }
+    }
+    &__image--flipped-third {
+        img {
+            width: 260px;
+        }
+    }
+    &__image--mini {
+        img {
+            width: 145px;
+        }
     }
 
     &__fake {

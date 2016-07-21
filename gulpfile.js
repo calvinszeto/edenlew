@@ -47,6 +47,12 @@ gulp.task('clean', function () {
     return del(['dist/**/*', '.tmp/**/*']);
 });
 
+gulp.task('favicon', ['clean'], function () {
+    // Copy over the favicon into the dist directory
+    return gulp.src('./favicon.ico')
+        .pipe(gulp.dest('./dist/'));
+})
+
 gulp.task('copy', ['clean'], function () {
     // Copy over images and fonts from assets/ to .tmp/
     return gulp.src(['./assets/images/**/*', './assets/fonts/**/*'], {base: './assets'})
@@ -111,7 +117,7 @@ gulp.task('usemin', ['assemble', 'clean'], function () {
     var analytics = gulp.src(['../assets/javascripts/**/analytics.js'], {read: false, cwd: '.tmp'});
     // Remember: usemin will fail with no error if you have a set of build tags without anything inside
     return gulp.src('./.tmp/**/*.html')
-        .pipe(plugins.if(isProduction, plugins.inject(analytics)))
+        // .pipe(plugins.if(isProduction, plugins.inject(analytics)))
         // Usemin doesn't support multiple HTML files - need to use foreach instead
         // See here: https://github.com/zont/gulp-usemin/issues/91
         .pipe(plugins.foreach(function (stream, file) {
@@ -142,7 +148,7 @@ gulp.task('critical', ['stylesheets', 'usemin'], function () {
         .pipe(gulp.dest('.tmp'));
 });
 
-gulp.task('build', ['stylesheets', 'usemin', 'copy'], function () {
+gulp.task('build', ['stylesheets', 'usemin', 'favicon', 'copy'], function () {
     // Only compress stylesheets and javascripts
     var compress = plugins.filter(['**/*.css', '**/*.js'], {restore: true});
     // Only replace tags in the html templates
@@ -154,15 +160,15 @@ gulp.task('build', ['stylesheets', 'usemin', 'copy'], function () {
         '!./.tmp/**/tmp*.html' // Skip Critical tmp files
     ])
         // Add file revisioning to all assets and change the references in the html templates
-        .pipe(plugins.if(isProduction, new plugins.revAll({dontRenameFile: ['.*\.html']}).revision()))
-        .pipe(compress)
-        .pipe(plugins.if(isProduction, plugins.gzip()))
-        .pipe(compress.restore)
-        .pipe(replaceTags)
+        .pipe(plugins.if(isProduction, new plugins.revAll({dontRenameFile: ['.*\.html'], dontUpdateReference: ['.*\.html']}).revision()))
+        //.pipe(compress)
+        //.pipe(plugins.if(isProduction, plugins.gzip()))
+        //.pipe(compress.restore)
+        //.pipe(replaceTags)
         // Replace asset links with compressed versions
-        .pipe(plugins.if(isProduction, plugins.replace(/(javascripts\/.*)\.js/gi, '$1.js.gz')))
-        .pipe(plugins.if(isProduction, plugins.replace(/(stylesheets\/.*)\.css/gi, '$1.css.gz')))
-        .pipe(replaceTags.restore)
+        //.pipe(plugins.if(isProduction, plugins.replace(/(javascripts\/.*)\.js/gi, '$1.js.gz')))
+        //.pipe(plugins.if(isProduction, plugins.replace(/(stylesheets\/.*)\.css/gi, '$1.css.gz')))
+        //.pipe(replaceTags.restore)
         .pipe(gulp.dest('./dist/'));
 });
 

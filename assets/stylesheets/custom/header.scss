@@ -1,4 +1,8 @@
 .header {
+  a {
+		text-decoration: none;
+	}
+
 	&__container {
 		display: flex;
 		flex-flow: row nowrap;
