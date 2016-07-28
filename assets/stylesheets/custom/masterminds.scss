@@ -1,8 +1,7 @@
-.keyhole-gigantico {
-	@extend .page;
-
+.masterminds {
 	&__vimeo {
 			width: 100%;
+			margin-top: 2 * $box-margin;
 			padding-bottom: calc(100% * 360 / 640);
 			position: relative;
 
@@ -10,13 +9,5 @@
 					position: absolute;
 					top: 0; right: 0; bottom: 0; left: 0;
 			}
-	}
-
-	&__description {
-		margin: 86px auto 98px;
-	}
-
-	&__process {
-		margin: 134px auto 38px;
 	}
 }
