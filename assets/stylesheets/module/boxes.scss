@@ -1,3 +1,4 @@
+$box-height: 320px;
 $box-margin: 8px;
 $box-column-width: (1200 - (2 * 16px)) / 3;
 
@@ -9,6 +10,9 @@ $box-column-width: (1200 - (2 * 16px)) / 3;
 	display: flex;
 	position: relative;
 	cursor: pointer;
+	overflow: hidden;
+
+	height: $box-height;
 
 	// Fix for div height to match img height
 	a {
@@ -82,8 +86,8 @@ $box-column-width: (1200 - (2 * 16px)) / 3;
 	}
 
 	img {
-		max-width: 100%;
-		height: auto;
+		max-width: none;
+		height: 100%;
 	}
 }
 

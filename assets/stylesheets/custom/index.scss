@@ -57,4 +57,12 @@ $large-breakpoint: 1200px + 2 * $site-margin;
 		@extend .box;	
 		flex-grow: (2 * $box-column-width + 16) / $box-column-width;
 	}
+
+    &__keyhole-gigantico {
+        @extend .box;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
 }
