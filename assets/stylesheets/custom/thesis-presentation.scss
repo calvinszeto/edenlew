@@ -1,3 +1,14 @@
 .thesis-presentation {
 	@extend .page;
+
+    &__youtube {
+        width: 100%;
+        padding-bottom: calc(100% * 9 / 16);
+        position: relative;
+
+        iframe {
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+        }
+    }
 }
