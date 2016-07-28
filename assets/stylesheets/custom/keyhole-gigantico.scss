@@ -1,5 +1,5 @@
 .keyhole-gigantico {
-	padding-bottom: 150px;
+	@extend .page;
 
 	&__description {
 		margin: 86px auto 98px;

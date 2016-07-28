@@ -1,5 +1,5 @@
 .crime-tools {
-	padding-bottom: 640px;
+	@extend .page;
 
 	&__description {
 		margin: 60px auto 45px;
