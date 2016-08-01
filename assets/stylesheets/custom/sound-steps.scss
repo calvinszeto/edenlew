@@ -1,0 +1,13 @@
+.sound-steps {
+	&__vimeo {
+			width: 100%;
+			margin-top: 2 * $box-margin;
+			padding-bottom: calc(100% * 360 / 640);
+			position: relative;
+
+			iframe {
+					position: absolute;
+					top: 0; right: 0; bottom: 0; left: 0;
+			}
+	}
+}
