@@ -47,6 +47,7 @@ $box-column-width: (1200 - (2 * 16px)) / 3;
 	&__title {
 		position: absolute;
 		font-family: 'Athelas W01 Bold';
+		-webkit-font-smoothing: antialiased;
 		font-size: 34px;
 		color: #FFFFFF;
 		width: 100%;
