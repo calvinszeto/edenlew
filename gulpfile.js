@@ -184,21 +184,20 @@ gulp.task('deploy', ['build'], function () {
             secretAccessKey: secrets.s3.secret
         });
 
-        var headers = {
+        var assetHeaders = {
             'Cache-Control': 'max-age=315360000, no-transform, public'
         };
-        var compressedHeaders = {
-            'Cache-Control': 'max-age=315360000, no-transform, public',
-            'Content-Encoding': 'gzip'
-        };
+				var normalHeaders = {
+						'Cache-Control': 'max-age=0'
+				}
 
-        var uncompressed = gulp.src(['./dist/**/*', '!/*.gz'])
-            .pipe(publisher.publish(headers));
+        var assets = gulp.src(['./dist/**/*.png', './dist/**/*.jpg', './dist/**/*.gif', './dist/**/*.css', './dist/**/*.js'])
+            .pipe(publisher.publish(assetHeaders));
 
-        var compressed = gulp.src(['./dist/**/*.gz'])
-            .pipe(publisher.publish(compressedHeaders));
+        var uncached = gulp.src(['./dist/**/*', '!./dist/**/*.png', '!./dist/**/*.jpg', '!./dist/**/*.gif', '!./dist/**/*.css', '!./dist/**/*.js'])
+            .pipe(publisher.publish(normalHeaders));
 
-        merge(uncompressed, compressed).pipe(publisher.sync())
+        merge(assets, uncached).pipe(publisher.sync())
             .pipe(plugins.awspublish.reporter());
     //}
 });
