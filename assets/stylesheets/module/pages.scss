@@ -68,6 +68,13 @@ $page-headline-width: 685px;
         margin: 0 auto 47px;
     }
 
+		&__text--side {
+			@extend .page__text-with-sidebar;
+			display: flex;
+			align-items: center;
+			height: 100%;
+		}
+
     &__sidebar {
         position: absolute;
         width: $box-column-width;
@@ -146,16 +153,19 @@ $page-headline-width: 685px;
 
     // Use a wrapper div on images because page__container is a flexbox
     &__image {
+			padding-top: 2*$box-margin;
         img {
             width: 100%;
         }
     }
     &__image--sidebar {
+			padding-top: 2*$box-margin;
         img {
             width: 97px;
         }
     }
     &__image--third {
+			padding-top: 2*$box-margin;
         img {
             width: 390px;
         }
@@ -171,11 +181,13 @@ $page-headline-width: 685px;
         }
     }
     &__image--half {
+			padding-top: 2*$box-margin;
         img {
             width: 592px;
         }
     }
     &__image--natural{
+			padding-top: 2*$box-margin;
         img {
             max-width: 100%;
         }
