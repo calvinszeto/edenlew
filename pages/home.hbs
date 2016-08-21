@@ -35,7 +35,7 @@ layout: default
 			</div>
 		</div>
 		<div class="index__row">
-			<div class="box">
+			<div class="index__thesis-presentation">
 				<a href="./thesis_presentation.html">
 					<img src="images/front/half_front_thesispresentation.jpg">
 					<div class="box__title">
@@ -100,7 +100,14 @@ layout: default
 			<div class="index__column--small">
 				<div class="index__keyhole-gigantico">
 					<a href="./keyhole_gigantico.html">
-						<img src="images/front/half_front_keyholegigantico.jpg">
+                        <picture>
+                            <source media="(max-width: 1264px) and (min-width: 860px)"
+                                    srcset="images/front/half_front_keyholegigantico_2398.jpg" />
+                            <source media="(max-width: 859px)"
+                                    srcset="images/front/half_front_keyholegigantico_1588.jpg" />
+                            <source srcset="images/front/front_keyholegigantico.jpg" />
+                            <img src="images/front/front_keyholegigantico.jpg">
+                        </picture>
 						<div class="box__title">
 							Keyhole Gigantico
 							<div class="box__sub-title">

@@ -1,4 +1,5 @@
-$large-breakpoint: 1200px + 2 * $site-margin;
+/*$large-breakpoint: 1200px + 2 * $site-margin;*/
+$large-breakpoint: 1264px;
 
 .index {
 	background: #FFFFFF;
@@ -16,10 +17,9 @@ $large-breakpoint: 1200px + 2 * $site-margin;
 
 	&__column--small {
 		flex: 1 0 0;
-
-		@media (max-width: $large-breakpoint) {
-			flex-basis: 100%;
-		}
+        @media (max-width: $large-breakpoint) {
+            width: 100%;
+        }
 	}
 
 	&__sub-row {
@@ -55,14 +55,35 @@ $large-breakpoint: 1200px + 2 * $site-margin;
 
 	&__thesis-book {
 		@extend .box;	
-		flex-grow: (2 * $box-column-width + 16) / $box-column-width;
+        flex-grow: (2 * $box-column-width + 16) / $box-column-width;
+        img {
+            max-width: none;
+            height: 100%;
+        }
 	}
+
+    &__thesis-presentation {
+        @extend .box;
+        img {
+            max-width: none;
+            height: 100%;
+        }
+    }
 
     &__keyhole-gigantico {
         @extend .box;
+        height: auto;
         img {
             max-width: 100%;
             height: auto;
+        }
+
+        @media (max-width: 1264px) {
+            height: $box-height;
+            img {
+                max-width: none;
+                height: 100%;
+            }
         }
     }
 }

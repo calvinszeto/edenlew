@@ -1,4 +1,12 @@
+$large-breakpoint: 1264px;
+$medium-breakpoint: 1250px;
+$small-breakpoint: 859px;
+
+$mini-medium-breakpoint: 960px;
+$mini-small-breakpoint: 656px;
+
 $box-height: 320px;
+$mini-box-height: 250px;
 $box-margin: 8px;
 $box-column-width: (1200 - (2 * 16px)) / 3;
 
@@ -86,8 +94,8 @@ $box-column-width: (1200 - (2 * 16px)) / 3;
 	}
 
 	img {
-		max-width: none;
-		height: 100%;
+		max-width: 100%;
+		height: auto;
 	}
 }
 
@@ -95,6 +103,7 @@ $box-column-width: (1200 - (2 * 16px)) / 3;
 	@extend .box;
 
 	min-width: (1200 - (3 * 16px)) / 4;
+    height: $mini-box-height;
 
 	.box__title {
 		font-size: 25px;
