@@ -73,11 +73,51 @@ $large-breakpoint: 1264px;
     &__keyhole-gigantico {
         @extend .box;
         height: auto;
-        img {
-            max-width: 100%;
-            height: auto;
-        }
 
+        @media (max-width: 1264px) {
+            height: $box-height;
+            img {
+                max-width: none;
+                height: 100%;
+            }
+        }
+    }
+
+    &__crimetools {
+        @extend .box;
+        @media (max-width: 1264px) {
+            height: $box-height;
+            img {
+                max-width: none;
+                height: 100%;
+            }
+        }
+    }
+
+    &__gild {
+        @extend .box;
+        @media (max-width: 1264px) {
+            height: $box-height;
+            img {
+                max-width: none;
+                height: 100%;
+            }
+        }
+    }
+
+    &__experiments {
+        @extend .box;
+        @media (max-width: 1264px) {
+            height: $box-height;
+            img {
+                max-width: none;
+                height: 100%;
+            }
+        }
+    }
+
+    &__paralleltimes {
+        @extend .box;
         @media (max-width: 1264px) {
             height: $box-height;
             img {
