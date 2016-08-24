@@ -13,6 +13,9 @@ $large-breakpoint: 1264px;
 
 	&__column--large {
 		flex: 2 0 0;
+        @media (max-width: $large-breakpoint) {
+            width: 100%;
+        }
 	}
 
 	&__column--small {
