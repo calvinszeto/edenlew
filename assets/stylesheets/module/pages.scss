@@ -6,6 +6,10 @@ $page-skinny-text-width: 455px;
 $page-mini-text-width: 435px;
 $page-headline-width: 685px;
 
+$page-sidebar-breakpoint: 1100px;
+$page-large-breakpoint: 1234px;
+$page-medium-breakpoint: 789px;
+
 .page {
     padding-bottom: 100px;
 
@@ -22,12 +26,20 @@ $page-headline-width: 685px;
         flex-flow: row wrap;
         justify-content: space-between;
         width: 100%;
+        @media (max-width: $page-large-breakpoint) {
+            max-width: $page-container-width;
+            margin: 0 auto;
+        }
     }
 
     &__container--spaced {
        @extend .page__container;
        justify-content: space-between;
        margin-bottom: 87px;
+
+       @media (max-width: $page-medium-breakpoint) {
+           justify-content: center;
+       }
     }
 
     &__container--centered {
@@ -60,20 +72,26 @@ $page-headline-width: 685px;
         @extend .page__text;
         max-width: $page-skinny-text-width;
         margin: 0;
+
+        @media (max-width: $page-sidebar-breakpoint) {
+            max-width: $page-text-width;
+            margin: 0 auto;
+        }
     }
 
     &__text--mini {
         @extend .page__text;
         max-width: $page-mini-text-width;
         margin: 0 auto 47px;
+        padding: 0 27px;
     }
 
-		&__text--side {
-			@extend .page__text-with-sidebar;
-			display: flex;
-			align-items: center;
-			height: 100%;
-		}
+    &__text--side {
+        @extend .page__text-with-sidebar;
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
 
     &__sidebar {
         position: absolute;
@@ -85,6 +103,10 @@ $page-headline-width: 685px;
         flex-flow: row wrap;
         align-items: flex-start;
         align-content: center;
+
+        @media (max-width: $page-sidebar-breakpoint) {
+            display: none;
+        }
     }
 
     &__sidebar-container {
@@ -105,6 +127,14 @@ $page-headline-width: 685px;
 
     &__item--bottom {
         align-self: flex-end;
+
+        @media (max-width: $page-medium-breakpoint) {
+            align-self: flex-start;
+            order: -1;
+            margin: 0 27px 50px 0;
+            height: 201.5px; // HACK: just trying to get Pipson the same height
+            overflow: hidden;
+        }
     }
 
     &__headline {
@@ -113,6 +143,12 @@ $page-headline-width: 685px;
         margin: 70px auto 54px;
         max-width: $page-headline-width;
         text-align: center;
+
+        @media (max-width: $page-large-breakpoint) {
+            br {
+                display: none;
+            }
+        }
     }
 
     &__step-text {
@@ -130,6 +166,11 @@ $page-headline-width: 685px;
         flex: 0 0 $box-column-width;
         display: flex;
         align-items: center;
+
+        @media (max-width: $page-large-breakpoint) {
+            flex: 0 1 $page-container-width;
+            margin: 0 auto;
+        }
     }
 
     &__column--centered {
@@ -153,26 +194,38 @@ $page-headline-width: 685px;
 
     // Use a wrapper div on images because page__container is a flexbox
     &__image {
-			padding-top: 2*$box-margin;
+        padding-top: 2*$box-margin;
         img {
             width: 100%;
         }
     }
     &__image--sidebar {
-			padding-top: 2*$box-margin;
+        padding-top: 2*$box-margin;
         img {
             width: 97px;
         }
     }
     &__image--third {
-			padding-top: 2*$box-margin;
+        padding-top: 2*$box-margin;
         img {
             width: 390px;
+        }
+
+        @media (max-width: $page-large-breakpoint) {
+            img {
+                width: 100%;
+            }
         }
     }
     &__image--flipped-third {
         img {
             width: 260px;
+        }
+
+        @media (max-width: $page-large-breakpoint) {
+            img {
+                width: 100%;
+            }
         }
     }
     &__image--mini {
@@ -184,6 +237,12 @@ $page-headline-width: 685px;
 			padding-top: 2*$box-margin;
         img {
             width: 592px;
+        }
+
+        @media (max-width: $page-large-breakpoint) {
+            img {
+                width: 100%;
+            }
         }
     }
     &__image--natural{
