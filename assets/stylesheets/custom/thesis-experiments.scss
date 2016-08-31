@@ -6,6 +6,12 @@
 	}
 
 	&__headline {
-		margin: 92px auto 18px;	
+        padding: 92px 0 18px;
 	}
+
+    &__stickers {
+        @media (max-width: 1234px) {
+            order: -1;
+        }
+    }
 }

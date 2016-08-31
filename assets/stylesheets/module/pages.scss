@@ -160,6 +160,12 @@ $page-medium-breakpoint: 789px;
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @media (max-width: $page-large-breakpoint) {
+            max-width: none;
+            text-align: center;
+            padding: 92px 0 18px;	
+        }
     }
 
     &__column {
@@ -186,6 +192,10 @@ $page-medium-breakpoint: 789px;
 
     &__wide-column {
         flex: 0 0 $half-page-width;
+        @media (max-width: $page-large-breakpoint) {
+            flex-basis: $page-text-width;
+            margin: 0 auto;
+        }
     }
 
     &__footnote {

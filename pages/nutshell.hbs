@@ -29,10 +29,21 @@ layout: default.hbs
 			<div class="page__image"><img src="images/nutshell/01.5_nutshell_mid.jpg"></div>
 		</div>
 		<div class="page__container--full">
-			<div class="page__image--half"><img src="images/nutshell/02_nutshell_duo.jpg"></div>
-			<div class="page__image--half"><img src="images/nutshell/03_nutshell_duo.jpg"></div>
-			<div class="page__image--half"><img src="images/nutshell/03.5_nutshell_duo.jpg"></div>
-			<div class="page__image--half"><img src="images/nutshell/04_nutshell_duo.jpg"></div>
+			<div class="page__image--half">
+                <picture>
+                    <source media="{{ large-break }}" srcset="images/nutshell/02_response_nutshell_mid.jpg">
+                    <img src="images/nutshell/02_nutshell_duo.jpg">
+                </picture>
+            </div>
+			<div class="page__image--half">
+                <img src="images/nutshell/03_nutshell_duo.jpg">
+            </div>
+			<div class="page__image--half">
+                <img src="images/nutshell/03.5_nutshell_duo.jpg">
+            </div>
+			<div class="page__image--half">
+                <img src="images/nutshell/04_nutshell_duo.jpg">
+            </div>
 		</div>
 		<div class="page__text">
 			<p>
